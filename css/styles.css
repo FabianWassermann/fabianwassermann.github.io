@@ -11546,6 +11546,23 @@ header.masthead .masthead-lead {
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+header.masthead .masthead-lead > a {
+  text-decoration: none;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+header.masthead .masthead-lead > a:hover {
+  text-decoration: underline;
+  color: white !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    color: #BCB8B9;
+  }
+  50% {
+    color: white;
+  }
+}
 header .content {
   width: 100%;
 }
