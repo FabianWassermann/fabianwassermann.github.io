@@ -2,12 +2,23 @@ let main;
 
 window.addEventListener("DOMContentLoaded", () => {
   setScaling();
+  setIsOverflowingAttribute();
 });
 
 function setScaling() {
   main = document.getElementById("main");
   main.style.width = `${window.innerWidth * 1.5}px`;
   main.style.height = `${window.innerHeight * 1.5}px`;
+}
+
+function setIsOverflowingAttribute() {
+  let tiles = document.getElementsByClassName("tile");
+  for (let tile of tiles) {
+    tile.firstElementChild?.setAttribute(
+      "is-overflown",
+      tile.firstElementChild.scrollHeight > tile.firstElementChild.clientHeight
+    );
+  }
 }
 
 window.addEventListener("mousemove", handleMouseMove);
